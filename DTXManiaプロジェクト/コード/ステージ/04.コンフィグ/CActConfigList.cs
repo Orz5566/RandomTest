@@ -985,6 +985,13 @@ namespace DTXMania
                 new string[] { "10", "9", "6" });
             this.list項目リスト.Add(this.iDrumsNumOfLanes);
 
+            this.iDrumsGroupRandom = new CItemToggle("GroupRandom", CDTXMania.ConfigIni.bグループ分けランダム,
+                "タム、シンバルグループに\n" +
+                "分けてランダムします。\n",
+                "Seperate into 2 groups\n" +
+                "and randomize the score.\n");
+            this.list項目リスト.Add(this.iDrumsGroupRandom);
+
             this.iDrumsRandomPad = new CItemList("RandomPad", CItemBase.Eパネル種別.通常, (int)CDTXMania.ConfigIni.eRandom.Drums,
                 "ドラムのパッドチップが\n" +
                 "ランダムに降ってきます。\n" +
@@ -3109,6 +3116,7 @@ namespace DTXMania
 
             CDTXMania.ConfigIni.eRandom.Drums = (Eランダムモード)this.iDrumsRandomPad.n現在選択されている項目番号;
             CDTXMania.ConfigIni.eRandomPedal.Drums = (Eランダムモード)this.iDrumsRandomPedal.n現在選択されている項目番号;
+            CDTXMania.ConfigIni.bグループ分けランダム = this.iDrumsGroupRandom.bON;
             CDTXMania.ConfigIni.eNumOfLanes.Drums = (Eタイプ)this.iDrumsNumOfLanes.n現在選択されている項目番号;
             CDTXMania.ConfigIni.eDkdkType.Drums = (Eタイプ)this.iDrumsDkdkType.n現在選択されている項目番号;
 

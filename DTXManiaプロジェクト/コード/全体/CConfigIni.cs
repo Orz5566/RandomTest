@@ -531,7 +531,8 @@ namespace DTXMania
         public STDGBVALUE<Eランダムモード> eRandom;
         public STDGBVALUE<Eランダムモード> eRandomPedal;
         public STDGBVALUE<bool> bAssignToLBD;
-		public Eダメージレベル eダメージレベル;
+        public bool bグループ分けランダム;
+        public Eダメージレベル eダメージレベル;
         public CKeyAssign KeyAssign;
 
         public STDGBVALUE<int> nLaneDisp;
@@ -1068,6 +1069,7 @@ namespace DTXMania
             this.eRandomPedal.Drums = Eランダムモード.OFF;
             this.eRandomPedal.Guitar = Eランダムモード.OFF;
             this.eRandomPedal.Bass = Eランダムモード.OFF;
+            this.bグループ分けランダム = true;
             this.nLaneDisp = new STDGBVALUE<int>();
             this.nLaneDisp.Drums = 0;
             this.nLaneDisp.Guitar = 0;
@@ -1807,6 +1809,9 @@ namespace DTXMania
             sw.WriteLine();
             sw.WriteLine("; バスをLBDに振り分け(0:OFF, 1:ON)");
             sw.WriteLine("AssignToLBD={0}", this.bAssignToLBD.Drums ? 1 : 0);
+            sw.WriteLine();
+            sw.WriteLine("; グループ分けランダム(0:OFF, 1:ON)");
+            sw.WriteLine("GroupRandom={0}", this.bグループ分けランダム ? 1 : 0);
             sw.WriteLine();
             sw.WriteLine("; ドラムパッドRANDOMモード(0:OFF, 1:Mirror, 2:Random, 3:SuperRandom, 4:HyperRandom, 5:MasterRandom, 6:AnotherRandom)");
             sw.WriteLine("DrumsRandomPad={0}", (int)this.eRandom.Drums);
@@ -2880,6 +2885,10 @@ namespace DTXMania
                                             else if( str3.Equals( "AssignToLBD" ) )
                                             {
                                                 this.bAssignToLBD.Drums = C変換.bONorOFF( str4[ 0 ] );
+                                            }
+                                            else if (str3.Equals("GroupRandom"))
+                                            {
+                                                this.bグループ分けランダム = C変換.bONorOFF(str4[0]);
                                             }
                                             else if (str3.Equals("DrumsJudgeLine"))
                                             {
