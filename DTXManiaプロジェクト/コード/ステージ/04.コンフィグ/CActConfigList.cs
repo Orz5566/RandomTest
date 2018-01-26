@@ -2854,6 +2854,7 @@ namespace DTXMania
         private CItemList iDrumsRandomPedal;
         private CItemList iDrumsNumOfLanes;
         private CItemList iDrumsDkdkType;
+        private CItemToggle iDrumsGroupRandom;
         private CItemToggle iDrumsAssignToLBD;
         private CItemToggle iDrumsHAZARD;
         private CItemList iDrumsAttackEffect;

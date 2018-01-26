@@ -2152,6 +2152,7 @@ namespace DTXMania
                             case 0x1c:
                                 // オートチャンネルに移行
                                 chip.nチャンネル番号 = 0x76;
+                                chip.e楽器パート = E楽器パート.UNKNOWN;
                                 continue;
                         }
                     }

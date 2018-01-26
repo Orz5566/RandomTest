@@ -1421,7 +1421,7 @@ namespace DTXMania
                                     {
                                         bool minus = false;
                                         int offsetX = 0;
-                                        string strDispLag = base.st状態[j].nLag.ToString();
+                                        string strDispLag = base.st状態[j].nLag.ToString("+#;-#;0");
                                         if (st状態[j].nLag < 0)
                                         {
                                             minus = true;
@@ -1429,9 +1429,9 @@ namespace DTXMania
                                         x = xc - strDispLag.Length * 15 / 2;
                                         for (int i = 0; i < strDispLag.Length; i++)
                                         {
-                                            int p = (strDispLag[i] == '-') ? 11 : (int)(strDispLag[i] - '0');	//int.Parse(strDispLag[i]);
+                                            int p = (strDispLag[i] == '-') ? 10 : ((strDispLag[i] == '+') ? 11 : (int)(strDispLag[i] - '0'));
                                             p += minus ? 0 : 12;		// change color if it is minus value
-                                            base.txlag数値.t2D描画(CDTXMania.app.Device, x + offsetX, y + 34, base.stLag数値[p].rc);
+                                            base.txlag数値.t2D描画(CDTXMania.app.Device, x + offsetX, y + 110, base.stLag数値[p].rc);
                                             offsetX += 15;
                                         }
                                     }
@@ -1559,18 +1559,18 @@ namespace DTXMania
                                     {
                                         bool minus = false;
                                         int offsetX = 0;
-                                        string strDispLag = base.st状態[j].nLag.ToString();
+                                        string strDispLag = base.st状態[j].nLag.ToString("+#;-#;0");
                                         if (st状態[j].nLag < 0)
                                         {
                                             minus = true;
                                         }
                                         //x = xc - strDispLag.Length * 15 / 2;
-                                        x = ( ( num5 ) + (this.stレーンサイズ[j].w / 2) ) - strDispLag.Length * 15 / 2;
+                                        x = ((num5) + (this.stレーンサイズ[j].w / 2)) - strDispLag.Length * 15 / 2;
                                         for (int i = 0; i < strDispLag.Length; i++)
                                         {
-                                            int p = (strDispLag[i] == '-') ? 11 : (int)(strDispLag[i] - '0');	//int.Parse(strDispLag[i]);
+                                            int p = (strDispLag[i] == '-') ? 10 : ((strDispLag[i] == '+') ? 11 : (int)(strDispLag[i] - '0'));
                                             p += minus ? 0 : 12;		// change color if it is minus value
-                                            base.txlag数値.t2D描画(CDTXMania.app.Device, x + offsetX, y + 34, base.stLag数値[p].rc);
+                                            base.txlag数値.t2D描画(CDTXMania.app.Device, x + offsetX, y + 110, base.stLag数値[p].rc);
                                             offsetX += 15;
                                         }
                                     }

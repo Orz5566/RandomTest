@@ -3373,7 +3373,7 @@ namespace DTXMania
                     }
                     break;
             }
-            if (pChip.e楽器パート == E楽器パート.DRUMS && pChip.nチャンネル番号 != 0x76)
+            if (pChip.e楽器パート == E楽器パート.DRUMS)
             {
                 if (bIsAutoPlay[this.nチャンネル0Atoレーン07[pChip.nチャンネル番号 - 0x11]])
                 {
